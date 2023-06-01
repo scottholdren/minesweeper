@@ -11,7 +11,7 @@ class BoardsController < ApplicationController
 
   # GET /boards/1 or /boards/1.json
   def show
-    @mine_map = build_board(@board)
+    #@mine_map = build_board(@board)
   end
 
   # GET /boards/all
