@@ -2,11 +2,14 @@
 
 <h1>Boards</h1>
 
+<%= render "form", board: @board %>
+
+
 <div id="boards">
   <% @boards.each do |board| %>
-    <%= render board %>
+    <%= board.name %> - created by <%= board.email %>, <%= board.created_at.strftime("%m/%d/%Y at %l:%M%P") %>
     <p>
-      <%= link_to "Show this board", board %>
+      <%= link_to "Play", board %>
     </p>
   <% end %>
 </div>
