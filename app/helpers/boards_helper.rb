@@ -25,7 +25,7 @@ module BoardsHelper
                 if mine_data.include?(idx) then
                    mine_map[y].push(1)
                 else
-                    mine_map[y].push(0)
+                   mine_map[y].push(0)
                 end
                 idx = idx + 1
             end

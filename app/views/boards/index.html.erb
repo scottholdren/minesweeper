@@ -1,15 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Minesweeper Boards</h1>
+<h1>Minesweeper</h1>
+
+
+
+<h1>Create a New Board</h1>
+<%= render "form", board: @board %>
+
+<h1>Recent Boards</h1>
 
 <div id="boards">
   <% @boards.each do |board| %>
     <p><%= link_to board.name, board %> - created by <%= board.email %>, <%= time_ago_in_words(board.created_at) %>
     </p>
   <% end %>
+  <%= link_to "View All", boards_path + "/all" %>
 </div>
-
-<h1>Create a New Board</h1>
-<%= render "form", board: @board %>
-
-

@@ -14,6 +14,11 @@ class BoardsController < ApplicationController
     @mine_map = build_board(@board)
   end
 
+  # GET /boards/all
+  def all
+    @boards = Board.all
+  end
+
   # GET /boards/new
   def new
     @board = Board.new
