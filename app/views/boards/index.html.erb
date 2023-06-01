@@ -14,5 +14,5 @@
     <p><%= link_to board.name, board %> - created by <%= board.email %>, <%= time_ago_in_words(board.created_at) %>
     </p>
   <% end %>
-  <%= link_to "View All", boards_path + "/all" %>
+  <%= link_to "View All Generated Boards", boards_path + "/all" %>
 </div>
