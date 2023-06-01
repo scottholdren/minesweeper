@@ -1,14 +1,17 @@
 class BoardsController < ApplicationController
+  include BoardsHelper
+
   before_action :set_board, only: %i[ show edit update destroy ]
 
   # GET /boards or /boards.json
   def index
-    @boards = Board.all
+    @boards = Board.order(created_at: :desc).limit(10)
     @board = Board.new
   end
 
   # GET /boards/1 or /boards/1.json
   def show
+    @mine_map = build_board(@board)
   end
 
   # GET /boards/new
@@ -23,7 +26,10 @@ class BoardsController < ApplicationController
   # POST /boards or /boards.json
   def create
     @board = Board.new(board_params)
-
+    if @board.mine_count > ( @board.height * @board.width ) then
+        @board.mine_count = @board.height * @board.width
+    end
+    @board.mine_data = generate_board(@board.height, @board.width, @board.mine_count)
     respond_to do |format|
       if @board.save
         format.html { redirect_to board_url(@board), notice: "Board was successfully created." }

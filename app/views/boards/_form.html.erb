@@ -17,26 +17,26 @@
   </div>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label "Name of Board", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :height, style: "display: block" %>
+    <%= form.label "Board Height", style: "display: block" %>
     <%= form.number_field :height %>
   </div>
 
   <div>
-    <%= form.label :width, style: "display: block" %>
+    <%= form.label "Board Width", style: "display: block" %>
     <%= form.number_field :width %>
   </div>
 
   <div>
-    <%= form.label :mine_count, style: "display: block" %>
+    <%= form.label "Number of Mines to Place", style: "display: block" %>
     <%= form.number_field :mine_count %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit('Generate Board') %>
   </div>
 <% end %>
